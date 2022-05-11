@@ -14,7 +14,8 @@ const GlobalStyle = createGlobalStyle`
     --vanilla: #F1EDE0;
     --black: #0C0D0D;
     --orange: #C85311;
-    --gray: #666360
+    --gray: #666360;
+    --red: #C60020;
   }
 
   body {

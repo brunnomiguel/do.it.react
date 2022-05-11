@@ -1,10 +1,10 @@
 import styled, { keyframes } from "styled-components";
-import RegisterImage from "../../assets/imgs/register.png";
+import LoginImage from "../../assets/imgs/login.png";
 
 export const BackgroundImage = styled.div`
   @media (min-width: 1100px) {
     flex: 1;
-    background: url(${RegisterImage}) no-repeat center, var(--black);
+    background: url(${LoginImage}) no-repeat center, var(--black);
     background-size: contain;
   }
 `;

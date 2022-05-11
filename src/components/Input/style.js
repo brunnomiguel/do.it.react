@@ -1,7 +1,13 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Container = styled.div`
   text-align: left;
+
+  div {
+    span {
+      color: var(--red);
+    }
+  }
 `;
 
 export const InputContainer = styled.div`
@@ -19,13 +25,22 @@ export const InputContainer = styled.div`
 
   transition: 0.4s;
 
+  ${(props) =>
+    props.isErrored &&
+    css`
+      border-color: var(--red);
+      svg {
+        color: var(--red);
+      }
+    `}
+
   input {
     background-color: transparent;
     color: var(--black);
 
     align-items: center;
     flex: 1;
-    
+
     &::placeholder {
       color: var(--gray);
     }

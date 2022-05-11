@@ -6,7 +6,7 @@ export const StyledButton = styled.button`
   background-color: ${(props) => (props.whiteSchema ? "#F5F5F5" : "#0C0D0D")};
   color: ${(props) => (props.whiteSchema ? "#0C0D0D" : "#F5F5F5")};
 
-  margin-top: 16px;
+  margin: 16px;
   height: 45px;
 
   border-radius: 8px;

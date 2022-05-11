@@ -4,14 +4,36 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Dashboard from "../pages/Dashboard";
+import { useEffect, useState } from "react";
 
 const Routes = () => {
+  const [authenticated, setAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const token = JSON.parse(localStorage.getItem("@Doit:token"));
+
+    if (token) {
+      return setAuthenticated(true);
+    }
+  }, [authenticated]);
+
   return (
     <Switch>
-      <Route path={"/"} exact component={Home} />
-      <Route path={"/login"} exact component={Login} />
-      <Route path={"/register"} exact component={Register} />
-      <Route path={"/dashboard"} exact component={Dashboard} />
+      <Route path="/" exact>
+        <Home authenticated={authenticated} />
+      </Route>
+      <Route path="/register" >
+        <Register authenticated={authenticated} />
+      </Route>
+      <Route path="/login" >
+        <Login
+          authenticated={authenticated}
+          setAuthenticated={setAuthenticated}
+        />
+      </Route>
+      <Route path="/dashboard" >
+        <Dashboard authenticated={authenticated} />
+      </Route>
     </Switch>
   );
 };

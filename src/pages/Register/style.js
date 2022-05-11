@@ -42,16 +42,21 @@ export const AnimationContainer = styled.div`
     margin: 80px 0;
     width: 340px;
     text-align: center;
-  }
 
-  h1 {
-    margin-bottom: 32px;
-  }
-  p {
-    margin-top: 8px;
-    a {
-      font-weight: bold;
-      color: var(--orange);
+    h1 {
+      margin-bottom: 32px;
+    }
+
+    > div {
+      margin-top: 16px;
+    }
+
+    p {
+      margin-top: 8px;
+      a {
+        font-weight: bold;
+        color: var(--orange);
+      }
     }
   }
 `;
